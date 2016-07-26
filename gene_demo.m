@@ -20,6 +20,8 @@ A1 = ADMM2AFast(D,X,N,alpha,beta,K,gsd,gsd);
 % if there could be non-positive number in the practical case ,please
 % delete abs
 
+fprintf('Calculation is done here!\n');
+
 load('FromID.mat');% this file contains array 'a'
 load('ToID.mat');% this file contains array 'b'
 load('name.mat');
@@ -30,3 +32,5 @@ for i = 1:length(a)
     fprintf(f1,'%s\t%s\t%s\t%s\t%f\n',namea{1},namea{2},nameb{1},nameb{2},full(A1(b(i),a(i))));
 end
 fclose(f1);
+
+fprintf('Please check the result in scores_edges_filtered.txt\n');
