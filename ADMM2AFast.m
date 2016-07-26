@@ -36,13 +36,9 @@ function [ C ] = ADMM2AFast( D,X,N,alpha,beta,K,BgNet,gsd)
         C = A+B+1/rho*U;
         C = lzeroProj(C,gsd);
         U = U + rho * (A+B-C);
-%       if mod(i,100) == 0
-%           disp(i)
-%           [ SN,SP,ACC,Fmeasure,MCC,AUC ] = evaluationF( C,gsd,BgNet,N );
-%           fprintf('*------------------------------------*\n');
-%           fprintf('%f\n%f\n%f\n%f\n%f\n%f\n%f\n%f\n%f\n', N,alpha,beta,SN,SP,ACC,Fmeasure,MCC,AUC);
-%           fprintf('*------------------------------------*\n');
-%       end
+        if mod(i,10)==0
+           fprintf('DMI core %d round Ok!\n', i);
+        end
     end
 end
 
