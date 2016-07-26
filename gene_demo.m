@@ -2,6 +2,8 @@
 clear all;
 close all;
 
+fprintf('DMI method starts:\n');
+
 ts = importdata('X.mat');
 gsd = importdata('bg.mat');
 [N, T] = size(ts);
