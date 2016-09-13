@@ -8,7 +8,7 @@ c = textscan(ngsdfile,'%s %s %s %s');
 fclose(ngsdfile);
 
 ngsdfile2 = fopen(strcat('human.node.txt'));
-c2 = textscan(ngsdfile,'%s','Delimiter',' ');
+c2 = textscan(ngsdfile2,'%s','Delimiter',' ');
 fclose(ngsdfile2);
 name = c2{1};
 GeneMap = containers.Map;
